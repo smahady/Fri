@@ -1,0 +1,26 @@
+from tkinter import *
+
+leo = Tk()
+
+leo.title('Generate label')
+
+leo.resizable(0, 0)
+
+leo.geometry('400x300+1000+150')
+
+lbl1 = Label(leo, text='This is a label') # Generate a label
+lbl1.pack() # Add tags to the main window
+
+btn1 = Button(leo, text='This is a button')
+btn1.pack()
+
+lbl2 = Label(leo, text='This is a label', font=("Arial Bold", 30),
+             bg="yellow", padx=30, pady=30) # Try to add some attributes
+lbl2.pack()
+
+lbl3 = Label(leo, text='abcdefghij', font=("Arial Bold", 16), # try to add some attributes
+             width=12, height=3,
+             bg="green", fg="white") # Try to add some attributes
+lbl3.pack()
+
+leo.mainloop()

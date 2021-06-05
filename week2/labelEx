@@ -1,0 +1,11 @@
+from tkinter import *
+
+window = Tk()
+window.title("I'm a window!")
+window.geometry('240x240')
+
+button = Button (window, text="I'm a button!")
+label = Label(window, text="I'm a label!")
+
+button.pack()
+label.pack()

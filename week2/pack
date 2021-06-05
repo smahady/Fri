@@ -1,0 +1,27 @@
+from tkinter import *
+
+leo = Tk()
+
+leo.title('pack layout')
+
+leo.resizable(0, 0)
+
+leo.geometry('400x300+1000+150')
+
+lbl1 = Label(leo, text='label1')
+lbl1.pack(anchor=CENTER)
+lbl2 = Label(leo, text='label2')
+lbl2.pack(side=LEFT)
+lbl3 = Label(leo, text='label 3')
+lbl3.pack(side=BOTTOM)
+lbl4 = Label(leo, text='label 4')
+lbl4.pack(side=RIGHT)
+
+# btn1 = Button(leo, text="Button1")
+# btn1.pack(side=TOP)
+Button(leo, text="Button1").pack(side=TOP)
+Button(leo, text="Button 2").pack(side=LEFT)
+Button(leo, text="Button 3").pack(side=BOTTOM)
+Button(leo, text="Button 4").pack(side=RIGHT)
+
+leo.mainloop()
