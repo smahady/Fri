@@ -9,7 +9,7 @@
 
 # window = APP()
 
-# window.mainloop()
+# window.mainloop()  
 
 
 import sys
@@ -18,9 +18,9 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 class Scene(QWidget):
 	def __init__(self):
 		super().__init__()
-		self.label = QLabel(window)
+		self.label = QLabel(self)
 		self.label.setText("Hello world")
-		self.label.move()
+		self.label.move(100, 100)
 
 
 app = QApplication(sys.argv)
