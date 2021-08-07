@@ -1,39 +1,19 @@
-#from tkinter import *
-
-#class APP(Tk):
-#	def __init__(self):
-#		super().__init__()
-#		self.message = Message(self, text="Whoever is reading this message is looking at tk", width=100)
-#		self.message.pack()	# change here!
-
-
-# window = APP()
-
-# window.mainloop()  
-
-
-import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
+import sys
 
-class Scene(QWidget):
-	def __init__(self):
+# Scene has now INHERITED QWidget
+# Scene IS A QWidget
+class Scene (QWidget) :
+	def __init__(self, x=600, y=400, speed=200,):
 		super().__init__()
-		self.label = QLabel(self)
-		self.label.setText("Hello world")
-		self.label.move(100, 100)
-
+		self.setGeometry(50,50,x,y)
+	
+	def start(self):
+		pass
+	def stop(self):
+		pass
 
 app = QApplication(sys.argv)
-
-window = QWidget()
-
-window.show()
-
-
+scene = Scene()
+scene.show()
 sys.exit(app.exec_())
-
-
-# local
-# global
-# class
-# instance
