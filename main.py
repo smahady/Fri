@@ -23,7 +23,7 @@ class Scene (QWidget) :
 	def updateTask(self):
 		self.update()
 
-	def paintEvent(self.event):
+	def paintEvent(self, event):
 		self.updateGame()
 
 	def updateGame(self):
