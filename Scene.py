@@ -1,4 +1,4 @@
-mport sys
+import sys
 from SimpleGame.Keys import *
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 #from PyQt5.QtGui import QIcon
