@@ -39,7 +39,8 @@ class Game(Scene):
 	
 	def updateGame(self):
 		print("My Update")
-		sprite.update()
+		self.sprite.update()
+
 	
 
 
