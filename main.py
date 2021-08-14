@@ -15,7 +15,7 @@ class Game(Scene):
 		
 		self.sprite.y=200
 		self.sprite.dx=1
-	
+	  self.start()
 	def updateGame(self):
 		print("My Update")
 		self.sprite.update()
