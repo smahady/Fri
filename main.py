@@ -12,8 +12,9 @@ class Game(Scene):
 		super().__init__(600,600)
     # Sprite.__init__(self, thisScene, imageFile, xSize, ySize)
 		self.sprite = Sprite(self, "spaceship100.png", 100,93)
-		self.spaceship100.y=200
-		self.spaceship100.dx=1
+		
+		self.sprite.y=200
+		self.sprite.dx=1
 	
 	def updateGame(self):
 		print("My Update")
