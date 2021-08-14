@@ -1,4 +1,4 @@
-import sys
+mport sys
 from SimpleGame.Keys import *
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 #from PyQt5.QtGui import QIcon
@@ -26,7 +26,7 @@ class Scene(QWidget):
 	
 	# slope variables
 	SLOPE_RIGHT = True
-	SLOPE_LEFT = True	
+	SLOPE_LEFT = False	
 
 
 	def __init__(self, x=600, y=400, speed=33):
@@ -64,7 +64,7 @@ class Scene(QWidget):
 	
 	def paintEvent(self, event):
 		for i in range(255):
-			keysDown[i] = (boardKeysDown[i] or virtKeysDown[i])	
+			self.keysDown[i] = (self.boardKeysDown[i] or self.virtKeysDown[i])	
 		
 		self.updateGame()	
 	
@@ -82,12 +82,14 @@ class Scene(QWidget):
 	def keyPressEvent(self, event):
 		for i in range(255):
 			if KeyTbl[i] == event.key():
-				self.boardKeysDown = True
+				self.boardKeysDown[i] = True
 		
 	def keyReleaseEvent(self, event):
 		for i in range(255):
 			if KeyTbl[i] == event.key():
-				self.BoardKeysDown = False
+				self.boardKeysDown[i] = False
 
-
+	def changeBoundSize(self, newWidth, newHeight):
+		self.width = newWidth
+		self.height = newHeight
 
