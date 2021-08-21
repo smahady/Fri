@@ -21,6 +21,7 @@ class Character(Sprite):
 		super().__init__(thisScene, sprite, x, y)
 		self.stateTimer = 0
 		self.setBoundAction(Scene.WRAP)
+		self.stateTimer = 0		
 
 	def update(self, offsetX = 0, offsetY = 0):
 		if self.state == States.FALLING:
@@ -68,6 +69,8 @@ class Ninja(Character):
 	  self.x = 100
 	  self.y = 100
 	  self.dy = 5
+	def jumpBehavior(self):
+		self.dy = -5
 
 
 #
