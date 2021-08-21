@@ -33,6 +33,8 @@ class Ninja(Character):
 	  self.y = 100
 	  self.dy = 5
 
+
+
 class Spaceship(Sprite):
 	def __init__(self, thisScene):
 		super().__init__(thisScene, "spaceship100.png", 100, 100)
@@ -65,10 +67,9 @@ class Game(Scene):
 	def __init__(self):
 		super().__init__(600,600)
     # Sprite.__init__(self, thisScene, imageFile, xSize, ySize)
-		self.sprite = Sprite(self, "spaceship100.png", 100,93)
-		
-		self.sprite.y=200
-		self.sprite.dx=1
+		self.sprite = Spaceship(self)
+		self.character = Ninja(self)
+
 		self.start()
 
 
@@ -76,7 +77,7 @@ class Game(Scene):
 	def updateGame(self):
 		print("My Update")
 		self.sprite.update()
-
+		self.character.update()
 	
 
 
