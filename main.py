@@ -80,7 +80,7 @@ class Game(Scene):
     # Sprite.__init__(self, thisScene, imageFile, xSize, ySize)
 		self.sprite = Spaceship(self)
 		self.character = Ninja(self)
-    self.ground = Ground(self)
+		self.ground = Ground(self)
 
 		self.start()
 
