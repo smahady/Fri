@@ -79,7 +79,7 @@ class Game(Scene):
 		super().__init__(600,600)
     # Sprite.__init__(self, thisScene, imageFile, xSize, ySize)
 		self.sprite = Spaceship(self)
-		self.character = Ninja(self
+		self.character = Ninja(self)
     self.ground = Ground(self)
 
 		self.start()
