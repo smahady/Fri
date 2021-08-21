@@ -90,7 +90,7 @@ class Game(Scene):
 		print("My Update")
 		self.sprite.update()
 		self.character.update()
-    self.ground.update()
+		self.ground.update()
 	
 
 
