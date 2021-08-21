@@ -71,6 +71,7 @@ class Ninja(Character):
 	  self.dy = 5
 	def jumpBehavior(self):
 		self.dy = -5
+		self.state = States.JUMP
 
 
 #
