@@ -35,7 +35,7 @@ class Ninja(Character):
 	  self.dy = 5
 
 
-
+#
 class Spaceship(Sprite):
 	def __init__(self, thisScene):
 		super().__init__(thisScene, "spaceship100.png", 100, 100)
