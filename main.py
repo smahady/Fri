@@ -22,6 +22,41 @@ class Character(Sprite):
     self.stateTimer = 0
     self.setBoundAction(Scene.WRAP)
 
+	def update(self, offsetX = 0, offsetY = 0):
+		if self.state == States.FALLING:
+			if self.scene.ground.collidesWith(self):
+				self.standBehavior()
+		elif self.state == States.STAND or self.state == States.WALK:
+			if self.scene.keysDown[Scene.K_SPACE]:
+				self.jumpBehavior()
+			elif self.scene.keysDown[Scene.K_RIGHT] or self.scene.keysDown[Scene.K_LEFT]:
+				self.walkBehavior()
+			elif self.state == States.WALK:
+				if (self.facing == Facing.RIGHT) and (self.scene.keysDown[Scene.K_RIGHT] == None):
+					self.standBehavior()
+				if (self.facing == Facing.LEFT) and (self.scene.keysDown[Scene.K_LEFT] == None):
+					self.standBehavior()
+		elif self.state == States.JUMP:
+			self.stateTimer = self.stateTimer - 1
+			if self.stateTimer < 1:
+				self.dy = self.dy * -1
+				self.state = States.FALLING
+		super().update(offsetX, offsetY)
+
+	def standBehavior(self):
+		self.dy = 0
+		self.dx = 0
+		self.state = States.STAND
+		#self.pauseAnimation()	
+
+	# override this in your Character
+	def jumpBehavior(self):
+		pass
+
+	# override this in your Character
+	def walkBehavior(self):
+		pass			
+
 # file - ethan_sprite.png
 # width - 123
 # height - 90
