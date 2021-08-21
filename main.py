@@ -17,10 +17,10 @@ class Facing():
 	LEFT = 1
 
 class Character(Sprite):
-  def __init__(self, thisScene, sprite, x, y):
-    super().__init__(thisScene, sprite, x, y)
-    self.stateTimer = 0
-    self.setBoundAction(Scene.WRAP)
+	def __init__(self, thisScene, sprite, x, y):
+		super().__init__(thisScene, sprite, x, y)
+		self.stateTimer = 0
+		self.setBoundAction(Scene.WRAP)
 
 	def update(self, offsetX = 0, offsetY = 0):
 		if self.state == States.FALLING:
