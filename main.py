@@ -3,6 +3,7 @@ from PyQt5.QtCore import QTimer
 import sys
 from Sprite import Sprite
 from Scene import Scene
+from enum import Enum
 
 class States(Enum):
 	FALLING = 0
