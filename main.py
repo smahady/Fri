@@ -4,6 +4,7 @@ import sys
 from Sprite import Sprite
 from Scene import Scene
 from enum import Enum
+from Block import Block
 
 class States(Enum):
 	FALLING = 0
@@ -62,13 +63,24 @@ class Spaceship(Sprite):
 		pass	
 
 
+class Ground(Block):
+	def __init__(self, thisScene):
+		spriteMaker = [["ground.png"] ] *30
+		super().__init__(thisScene, spriteMaker, 120, 40)
+		self.x = 0
+		self.y = 500
+		
+
+				
+
 
 class Game(Scene):
 	def __init__(self):
 		super().__init__(600,600)
     # Sprite.__init__(self, thisScene, imageFile, xSize, ySize)
 		self.sprite = Spaceship(self)
-		self.character = Ninja(self)
+		self.character = Ninja(self
+    self.ground = Ground(self)
 
 		self.start()
 
@@ -78,6 +90,7 @@ class Game(Scene):
 		print("My Update")
 		self.sprite.update()
 		self.character.update()
+    self.ground.update()
 	
 
 
