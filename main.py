@@ -70,9 +70,9 @@ class Ninja(Character):
 	  self.y = 100
 	  self.dy = 5
   def jumpBehavior(self):
-    self.dy = -5
-    self.state = States.JUMP
-    self.stateTimer = 100
+      self.dy = -5
+      self.state = States.JUMP
+      self.stateTimer = 100
 
 #
 class Spaceship(Sprite):
