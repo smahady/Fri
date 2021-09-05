@@ -45,6 +45,7 @@ class Character(Sprite):
 		super().update(offsetX, offsetY)
 
 	def standBehavior(self):
+    self.pauseAnimation()
 		self.dy = 0
 		self.dx = 0
 		self.state = States.STAND
@@ -92,8 +93,8 @@ class Ninja(Character):
       self.dx = 5
       self.state = States.WALK
     elif self.scene.keysDown[Scene.K_LEFT]:
-      self.facing = Facing.Left
-      self.setCurrentCycle(Facing.Left	)
+      self.facing = Facing.LEFT
+      self.setCurrentCycle(Facing.LEFT)
       self.playAnimation()
       self.dx = 5
       self.state = States.WALK
