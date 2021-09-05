@@ -82,7 +82,7 @@ class Ninja(Character):
       self.playAnimation()
       self.dx = 5
       self.state = States.WALK
-	  elif self.scene.keysDown[Scene.K_LEFT]:
+    elif self.scene.keysDown[Scene.K_LEFT]:
       self.facing = Facing.Left
       self.setCurrentCycle(Facing.Left)
       self.playAnimation()
