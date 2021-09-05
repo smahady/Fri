@@ -73,10 +73,24 @@ class Ninja(Character):
       self.dy = -5
       self.state = States.JUMP
       self.stateTimer = 12
+  # This should check if self.scene.keysDown[Scene.K_RIGHT]is True. If so self.facing to 0, self.setCurrentCycle to Facing.RIGHT, call the self.playAnimation method. Set the DX to a value between 0 and 10. Set a State to States.WALK
+	# If not check if self.scene.keysDown[Scene.K_LEFT] is True. If so self.facing to Facing.LEFT, self.setCurrentCycle to Facing.LEFT, call the self.playAnimation method. Set the DX to a value between 0 and -10. Set a State to States.WALK    
   def walkBehavior(self):
-	  self.dx = 5
-	  self.state = States.WALK
-	  self.stateTimer = 10
+    if self.scene.keysDown[Scene.K_RIGHT]:
+		  self.facing = Facing.RIGHT
+		  self.setCurrentCycle(Facing.RIGHT)
+		  self.playAnimation()
+	    self.dx = 5
+	    self.state = States.WALK
+	  elif self.scene.keysDown[Scene.K_LEFT]:
+		  self.facing = Facing.Left
+		  self.setCurrentCycle(Facing.Left)
+		  self.playAnimation()
+	    self.dx = 5
+	    self.state = States.WALK
+
+
+
 
 #
 class Spaceship(Sprite):
