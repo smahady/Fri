@@ -45,7 +45,7 @@ class Character(Sprite):
 		super().update(offsetX, offsetY)
 
 	def standBehavior(self):
-    self.pauseAnimation()
+		self.pauseAnimation()
 		self.dy = 0
 		self.dx = 0
 		self.state = States.STAND
