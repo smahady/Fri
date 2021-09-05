@@ -58,17 +58,26 @@ class Character(Sprite):
 	def walkBehavior(self):
 		pass			
 
-# file - ethan_sprite.png
-# width - 123
-# height - 90
+# change file to ethan_sheet.png
+# change super init width to 330
+# change super init height to - 120
+# at the end of the __init__ method, call self.loadAnimation(330, 120, 66, 60)
+# call self.generateAnimationCycles()
+# call self.setAnimationSpeed(30)
+# call self.playAnimation()
 class Ninja(Character):
   def __init__(self, thisScene):
-	  super().__init__(thisScene, "ethan_sprite.png", 123, 90)
+	  super().__init__(thisScene, "ethan_sheet.png", 330, 120)
 	  self.state = States.FALLING
 	  self.facing = Facing.LEFT
 	  self.x = 100
 	  self.y = 100
 	  self.dy = 5
+	  self.loadAnimation(330,120,82,60)
+	  self.generateAnimationCycles()
+	  self.setAnimationSpeed(30)
+	  self.playAnimation()
+    
   def jumpBehavior(self):
       self.dy = -5
       self.state = States.JUMP
@@ -84,7 +93,7 @@ class Ninja(Character):
       self.state = States.WALK
     elif self.scene.keysDown[Scene.K_LEFT]:
       self.facing = Facing.Left
-      self.setCurrentCycle(Facing.Left)
+      self.setCurrentCycle(Facing.Left	)
       self.playAnimation()
       self.dx = 5
       self.state = States.WALK
