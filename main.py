@@ -77,17 +77,17 @@ class Ninja(Character):
 	# If not check if self.scene.keysDown[Scene.K_LEFT] is True. If so self.facing to Facing.LEFT, self.setCurrentCycle to Facing.LEFT, call the self.playAnimation method. Set the DX to a value between 0 and -10. Set a State to States.WALK    
   def walkBehavior(self):
     if self.scene.keysDown[Scene.K_RIGHT]:
-		  self.facing = Facing.RIGHT
-		  self.setCurrentCycle(Facing.RIGHT)
-		  self.playAnimation()
-	    self.dx = 5
-	    self.state = States.WALK
+      self.facing = Facing.RIGHT
+      self.setCurrentCycle(Facing.RIGHT)
+      self.playAnimation()
+      self.dx = 5
+      self.state = States.WALK
 	  elif self.scene.keysDown[Scene.K_LEFT]:
-		  self.facing = Facing.Left
-		  self.setCurrentCycle(Facing.Left)
-		  self.playAnimation()
-	    self.dx = 5
-	    self.state = States.WALK
+      self.facing = Facing.Left
+      self.setCurrentCycle(Facing.Left)
+      self.playAnimation()
+      self.dx = 5
+      self.state = States.WALK
 
 
 
