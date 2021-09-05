@@ -96,7 +96,7 @@ class Ninja(Character):
       self.facing = Facing.LEFT
       self.setCurrentCycle(Facing.LEFT)
       self.playAnimation()
-      self.dx = 5
+      self.dx = -5
       self.state = States.WALK
 
 
